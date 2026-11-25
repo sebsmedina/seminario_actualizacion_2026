@@ -15,19 +15,9 @@ Antes de ejecutar el código, asegurarse de tener instalado:
 - Visual Studio Code (o cualquier editor de código de preferencia)
 - Python 3.8 o superior
 
-#### 💻 Instalación y Uso Local
+#### 💻 Instalación y Uso Local (Manual)
 
-```bash
-# Clonar repositorio
-git clone https://github.com/sebsmedina/seminario_2026_proyecto_integrador/clase_02
-cd clase_02
-```
-
-#### 📋 Desarrollo
-
-1. Dentro de la carpeta que alojará todas las clases, crear una carpeta de nombre `clase_02`. Dentro de ella, y mediante editor de código, crear un archivo *app.py*, el cual alojará todo el Back-end de la aplicación.
-
-2. Crear el entorno virtual del proyecto ingresando por la terminal el siguiente comando:
+1. Crear el entorno virtual del proyecto ingresando por la terminal el siguiente comando:
 
 ```bash
 # crear y activar (Windows)
@@ -48,13 +38,16 @@ print(sys.executable)"
 
 **CONSEJO**: siempre crear un entorno virtual para cada proyecto. Asegura aislamiento, organización y reproducibilidad.
 
-3. Se utilizará Gradio, una librería de Python que permite crear interfaces web interactivas para modelos de aprendizaje automático y funciones de inteligencia artificial, para gestionar la API y la interfaz de la aplicación.
+2. Dentro de la carpeta que alojará todas las clases, crear una carpeta de nombre `clase_02`. Dentro de ella, y mediante editor de código, crear un archivo *app.py*, el cual alojará el backend de la aplicación.
 
-Instalar todas las librerías necesarias con *pip* utilizando *requierements.txt*
+3. Para la interfaz se utilizará Gradio, una librería de Python que permite crear web interactivas para modelos de aprendizaje automático y funciones de inteligencia artificial. Gestionará la API y la interfaz de la aplicación.
+
+Descargar `requierements.txt` en la carpeta `clase_02` e instalar todas las librerías necesarias mediante *pip*:
 
 ```bash
 (.venv) > pip install -r requirements.txt
 ```
+
 Instalará entre otras librerías:
 
 ```bash
@@ -64,16 +57,24 @@ streamlit     # otro framework de código abierto
 requests      # instala dependencias para consumir API's
 ```
 
-4. Almacenar en un archivo *requimerents.txt* las librerías instaladas para que puedan ser replicadas en el futuro.
+¿Cómo se almacenan las librerías instaladas en un entorno para que puedan ser replicadas en el futuro? De la siguiente manera:
 
 ```bash
 (.venv) > pip freeze > requirements.txt     # guarda la lista de dependencias
                                             # para replicarla
 ```
 
-4. Uso de Git para organizar las distintas versiones de nuestro proyecto.
+4. Correr el contenido del archivo `app.py` con el siguiente comando en la terminal:
 
-Identificarse con Git al iniciarlo (necesario para ejecutar commits) una única vez.
+```bash
+(.venv) > python app.py
+```
+
+#### 💻 Instalación y Uso Local (con Git) 
+
+Git organiza las distintas versiones de los proyectos.
+
+1. Identificarse con Git al iniciar (necesario para ejecutar commits) una única vez.
 
 ```bash
 > git --version         # Versión de Git
@@ -83,21 +84,37 @@ Identificarse con Git al iniciarlo (necesario para ejecutar commits) una única 
 > git config --global init.defaultBranch main       # Setear rama principal
 ```
 
-5. Creación de *.gitignore* para evitar que Git mueva archivos y/o carpetas que no deseados.
-Por ejemplo:
+2. Dentro de la carpeta de la cursada, ejecutar en terminal para clonar la carpeta de la clase 2:
+
+```bash
+# Clonar repositorio
+git clone https://github.com/sebsmedina/seminario_actualizacion_2026/clase_02
+cd clase_02
+```
+
+3. Correr archivo `app.py` con:
+
+```bash
+(.venv) > python app.py
+```
+
+#### 💻 Claves del uso de Git y GitHub:
+
+1. Creación de *.gitignore* para evitar que Git mueva archivos y/o carpetas que no deseados. Por ejemplo:
+
 ```bash
 .venv/          # carpeta del entorno virtual
 __pycache__/    # contiene código fuente de Python escrito en bajo nivel
 ```
 
-6. Para visualizar que el contenido del repositorio local:
+2. Para visualizar que el contenido del repositorio local:
 
 ```bash
 > git init              # Inicia un nuevo repositorio
 > git status -u         # Lo que Git ve en la carpeta del proyecto
 ```
 
-7. Añadir los archivos con las últimas modificaciones al área de preparación (*add*) y almacenarlas en el historial del repositorio local (*commit*).
+3. Añadir los archivos con las últimas modificaciones al área de preparación (*add*) y almacenarlas en el historial del repositorio local (*commit*).
 
 ```bash
 > git add .                         # Agrega todos los
