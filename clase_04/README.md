@@ -1,3 +1,17 @@
+---
+title: Clase 04 Seminario Actualizacion 2026
+emoji: 🐨
+colorFrom: purple
+colorTo: red
+sdk: gradio
+sdk_version: 6.32.0
+python_version: '3.12'
+app_file: app.py
+pinned: false
+license: mit
+short_description: Clase 4 Seminario Actualizacion 2026
+---
+
 ## Clase N° 4 - Del repositorio local al Spaces
 
 #### 🎯 Objetivos:
