@@ -92,13 +92,13 @@ Git sugiere un nuevo README.md con la siguiente estructura:
 
 ```bash
 <<<<<<< HEAD
-(tu README, el de la Clase 3)
+(tu README, el de la Clase 4)
 =======
 (el README del Space, con su configuración)
 >>>>>>>
 ```
 
-7. Seleccionar la versión inicial (`clase_03`),eliminar la corrección y los marcadores. Ejecutar *add*, *commit* y *push*:
+7. Seleccionar la versión inicial (`clase_04`), eliminar la corrección y los marcadores. Ejecutar *add*, *commit* y *push*:
 
 ```bash
 git add README.md
@@ -119,4 +119,6 @@ git push space main
 
 La aplicación se deplega de forma correcta, siendo Gradio quien construye el frontend, construye la API y la documenta.
 
-9. Para finalizar, modificar la interfaz de la app utilizando el método Blocks de Gradio, agregándole funcionalidad.
+9. Para finalizar, modificar la interfaz de la app utilizando el método **Blocks** de Gradio, agregándole funcionalidad.
+
+#### 🌎 Link aplicación en Hugging Face: https://huggingface.co/spaces/sebsmedina/clase_04_seminario_actualizacion_2026
