@@ -1,14 +1,40 @@
 ## Clase N° 4 - Del repositorio local al Spaces
 
-Actividades que llevamos a cabo en la clase:
+#### 🎯 Objetivos:
+Dirección web pública activa. Creación de cuenta en Hugging Face. Respositorio local conectado en dos lugares distintos.
 
-1. Comenzamos la clase revisando algunos conceptos de programación: clases, funciones (métodos y atributos), variables locales y globales, Backend, Frontend y API. Entendimos que nuestro código solamente contenía el Backend de la aplicación, que nos faltaba todo lo demás para poder desplegarla.
+#### 📂 Contenido de esta Carpeta
+| Nombre del archivo | Descripción |
+|---|---|
+| `app.py` | Contiene el código de una pequeña app en Gradio|
+| `README.md` | Pasos para editar archivo `app.py` |
+| `requirements.txt` | Archivo de texto con las librerías necesarias para el entorno virtual |
 
-2. Conocimos Hugging Face Spaces, una herramienta gratuita que permite alojar, probar y compartir aplicaciones web interactivas de inteligencia artificial y aprendizaje automático. Generamos un usuario y una cuenta.
+#### ⚙️ Requisitos Previos
+Antes de ejecutar el código, asegurarse de tener instalado:
+- Visual Studio Code (o cualquier editor de código de preferencia)
+- Python 3.8 o superior
+- Cuenta en GitHub con repositorios enlazados.
 
-3. Creamos un Space en HF para poder alojar allí nuestro repositorio. La diferencia entre GitHub y HF es que éste último levanta nuestro código y lo deja funcionando.
+#### 💻 Instalación y Uso con Git
 
-4. Una vez generado nuestro Space, observamos que el mismo posee ya su primer commit y un README.md creado automáticamente:
+```bash
+# Clonar repositorio
+git clone https://github.com/sebsmedina/seminario_actualizacion_2026/clase_03
+cd clase_03     # en repositorio local
+```
+
+#### ✅ Pasos
+
+1. Generar un usuario y una cuenta en https://huggingface.co/
+
+Hugging Face brinda **Spaces**, una herramienta gratuita que permite alojar, probar y compartir aplicaciones web interactivas de inteligencia artificial y aprendizaje automático.
+
+2. En el perfil de usuario, ir a la sección de **Access Tokens** y crear un nuevo token con permisos de escritura ("write").
+
+3. Crear un Space en HF para poder alojar allí el repositorio. La diferencia entre GitHub y HF es que éste último levanta el código y lo deja funcionando.
+
+4. Una vez generado el Space, se observa que posee su primer commit y un README.md creado automáticamente:
 
 ```bash
 ---
@@ -22,11 +48,10 @@ app_file: app.py
 pinned: false
 ---
 
-
 ```
-El sitio del repo en HF funciona correctamente.
+Ésto indica que el sitio del repositorio en HF funciona correctamente. Copiar la URL.
 
-5. En nuestra máquina, generamos un nuevo destino remoto para nuestro repo con el link del Space. Cuando conectemos, nos pedirá autorizar la conexión con el sitio de HF mediante un token de escritura (WRITE) generado allí mismo:
+5. En la carpeta `clase_04` en el repositorio local, generar un nuevo destino remoto con el link del Space. Al enlazar, solicitará autorizar la conexión con el sitio de HF mediante el token de escritura (WRITE) generado anteriormente:
 
 ```bash
 git remote add space https://huggingface.co/spaces/USUARIO/NOMBRE
@@ -34,32 +59,32 @@ git remote -v
 
 ```
 
-"space" es el alias de nuestro nuevo repo remoto en HF.
+"space" es el alias del nuevo repositorio remoto, en HF.
 
-6. Ejecutamos un push a dicho repo:
+6. Ejecutar un push a dicho repo:
 
 ```bash
 git push space main
 ```
 
-Y nos devuelve un fallo. Se debe a la coexistencia del README.md generado de manera local en la clase 2 y el creado en el Space de HF. 
-Con la siguiente linea le decimos a Git que tiene permiso para mezclarlos:
+Observar que devuelve un error. Ésto es esperable debido a la coexistencia del `README.md` generado de manera local (o al clonar ésta carpeta) y el creado en el Space de HF. 
+Con la siguiente linea se declara a Git que tiene permiso para mezclarlos:
 
 ```bash
 git pull space main --allow-unrelated-histories
 ```
 
-Nos sugiere un nuevo README.md con la siguiente estructura:
+Git sugiere un nuevo README.md con la siguiente estructura:
 
 ```bash
 <<<<<<< HEAD
-(tu README, el de la Clase 2)
+(tu README, el de la Clase 3)
 =======
 (el README del Space, con su configuración)
 >>>>>>>
 ```
 
-7. Nos quedamos con nuestra versión inicial, borrando la otra y los marcadores. Ejecutamos *add*, *commit* y *push*:
+7. Seleccionar la versión inicial (`clase_03`),eliminar la corrección y los marcadores. Ejecutar *add*, *commit* y *push*:
 
 ```bash
 git add README.md
@@ -67,17 +92,17 @@ git commit -m "Resuelvo el conflicto del README"
 git push space main
 ```
 
-El Space se construye, pero al ir al espacio inicial nos da ERROR.
+El Space se construye, pero al ir al espacio inicial devuelve un nuevo error.
 
-8. El README.md creado por el Space contiene la configuración de la plataforma. Sin ella, no puede funcionar. Volvemos atrás con los cambios, dejamos la sugerencia (albergando ambos README.md en el mismo archivo) y nuevamente ejecutamos *add*, *commit* y *push*:
+8. El README.md creado por el Space contiene la configuración de la plataforma. Sin ella, no puede funcionar. Retroceder en los cambios, preservar la sugerencia (albergando ambos README.md en el mismo archivo) y ejecutar nuevamente *add*, *commit* y *push*:
 
 ```bash
-# Reponemos el encabezado al principio del README
+# Repone el encabezado al inicio del README
 git add README.md
 git commit -m "Repongo la configuración del Space"
 git push space main
 ```
 
-Vemos que la aplicación se deplega de forma correcta, siendo Gradio quien construye el Frontend, construye la API y la documenta.
+La aplicación se deplega de forma correcta, siendo Gradio quien construye el frontend, construye la API y la documenta.
 
-9. Para finalizar, modificamos la interfaz de nuestra app utilizando el método Blocks de Gradio, agregándole funcionalidad.
+9. Para finalizar, modificar la interfaz de la app utilizando el método Blocks de Gradio, agregándole funcionalidad.
