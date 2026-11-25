@@ -25,9 +25,9 @@ cd clase_02
 
 #### 📋 Desarrollo
 
-1. Dentro de la carpeta de nuestro proyecto, crear una carpeta de nombre `clase_02`. Dentro de ella y, mediante nuestro editor de código (Visual Studio code), creamos un archivo *app.py*, el cual se alojará todo el Back-end de nuestra aplicación.
+1. Dentro de la carpeta que alojará todas las clases, crear una carpeta de nombre `clase_02`. Dentro de ella, y mediante editor de código, creamos un archivo *app.py*, el cual se alojará todo el Back-end de la aplicación.
 
-2. Creamos el entorno virtual de nuestro proyecto ingresando por la terminal el siguiente comando:
+2. Crear el entorno virtual del proyecto ingresando por la terminal el siguiente comando:
 
 ```bash
 # crear y activar (Windows)
@@ -39,7 +39,7 @@ $ python3 -m venv .venv
 $ source .venv/bin/activat
 ```
 
-Verificamos si está activado correctamente:
+Cómo verificar si está activado correctamente:
 
 ```bash
 python -c "import sys;
@@ -48,9 +48,9 @@ print(sys.executable)"
 
 **CONSEJO**: siempre crear un entorno virtual para cada proyecto. Asegura aislamiento, organización y reproducibilidad.
 
-3. Utilizaremos Gradio, una librería de Python que permite crear interfaces web interactivas para modelos de aprendizaje automático y funciones de inteligencia artificial, para gestionar la API y la interfaz de nuestra aplicación.
+3. Se utilizará Gradio, una librería de Python que permite crear interfaces web interactivas para modelos de aprendizaje automático y funciones de inteligencia artificial, para gestionar la API y la interfaz de la aplicación.
 
-Instalaremos todas las librerías necesarias con *pip* utilizando *requierements.txt*
+Instalar todas las librerías necesarias con *pip* utilizando *requierements.txt*
 
 ```bash
 (.venv) > pip install -r requirements.txt
@@ -61,47 +61,47 @@ Instalará entre otras librerías:
 gradio        # Framework para desplegar apps basadas en modelos de ML
 spaces        # paquete de utilidades de Hugging Face para desplegar trabajos en HF Spaces
 streamlit     # otro framework de código abierto
-requests      # instalamos dependencias para consumir API's
+requests      # instala dependencias para consumir API's
 ```
 
-4. Almacenamos en un archivo *requimerents.txt* las librerías instaladas para que puedan ser replicadas en el futuro.
+4. Almacenar en un archivo *requimerents.txt* las librerías instaladas para que puedan ser replicadas en el futuro.
 
 ```bash
-(.venv) > pip freeze > requirements.txt     # guardamos la lista
-                                            # para quien necesite replicarla
+(.venv) > pip freeze > requirements.txt     # guarda la lista de dependencias
+                                            # para replicarla
 ```
 
 4. Uso de Git para organizar las distintas versiones de nuestro proyecto.
 
-Identificarnos con Git al iniciarlo (necesario para ejecutar nuestros commits). Lo realizamos una única vez.
+Identificarse con Git al iniciarlo (necesario para ejecutar commits) una única vez.
 
 ```bash
 > git --version         # Versión de Git
 
-> git config --global user.name "Nombre Apellido"   # Nuestro nombre
-> git config --global user.email "tu@correo.com"    # Correo asociado a nuestra cuenta de GitHub
-> git config --global init.defaultBranch main       # Setear nuestra rama principal
+> git config --global user.name "Nombre Apellido"   # Nombre de usuario
+> git config --global user.email "tu@correo.com"    # Correo asociado a la cuenta de GitHub
+> git config --global init.defaultBranch main       # Setear rama principal
 ```
 
-5. Creación de *.gitignore* para evitar que Git mueva archivos y/o carpetas que no queramos.
+5. Creación de *.gitignore* para evitar que Git mueva archivos y/o carpetas que no deseados.
 Por ejemplo:
 ```bash
-.venv/          # carpeta de nuestro entorno virtual
+.venv/          # carpeta del entorno virtual
 __pycache__/    # contiene código fuente de Python escrito en bajo nivel
 ```
 
-6. Para visualizar que tenemos en nuestro repositorio local:
+6. Para visualizar que el contenido del repositorio local:
 
 ```bash
-> git init              # Iniciamos un nuevo repositorio
-> git status -u         # Lo que Git ve en la carpeta de nuestro proyecto
+> git init              # Inicia un nuevo repositorio
+> git status -u         # Lo que Git ve en la carpeta del proyecto
 ```
 
-7. Añadimos nuestros archivos con las últimas modificaciones al área de preparación (*add*) y las guardamos en el historial de nuestro repositorio local (*commit*).
+7. Añadir los archivos con las últimas modificaciones al área de preparación (*add*) y almacenarlas en el historial del repositorio local (*commit*).
 
 ```bash
-> git add .                         # Agregamos todos los
-                                    # archivos al área de preparación (en nuestro solamente app.py)
-> git commit -m "mi_primer_commit"  # Guardamos la actualización
+> git add .                         # Agrega todos los
+                                    # archivos al área de preparación (en éste caso app.py)
+> git commit -m "mi_primer_commit"  # Guarda la actualización
                                     # junto con un mensaje descriptivo
 ```
