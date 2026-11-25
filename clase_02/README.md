@@ -7,12 +7,12 @@ Carpeta del Proyecto Integrador. Entorno virtual creado y activado. *requirement
 | Nombre del archivo | Descripción |
 |---|---|
 | `app.py` | Contiene el código de una pequeña app en Gradio|
-| `README.md` | Pasos para editar nuestro archivo `app.py` |
-| `requirements.txt` | Archivo de texto con las librerías necesarias para nuestro entorno virtual |
+| `README.md` | Pasos para editar archivo `app.py` |
+| `requirements.txt` | Archivo de texto con las librerías necesarias para el entorno virtual |
 
 #### ⚙️ Requisitos Previos
-Antes de ejecutar el código, asegúrate de tener instalado:
-- Visual Studio Code (o cualquier editor de código de tu preferencia)
+Antes de ejecutar el código, asegurarse de tener instalado:
+- Visual Studio Code (o cualquier editor de código de preferencia)
 - Python 3.8 o superior
 
 #### 💻 Instalación y Uso Local
@@ -25,7 +25,7 @@ cd clase_02
 
 #### 📋 Desarrollo
 
-1. Dentro de la carpeta que alojará todas las clases, crear una carpeta de nombre `clase_02`. Dentro de ella, y mediante editor de código, creamos un archivo *app.py*, el cual se alojará todo el Back-end de la aplicación.
+1. Dentro de la carpeta que alojará todas las clases, crear una carpeta de nombre `clase_02`. Dentro de ella, y mediante editor de código, crear un archivo *app.py*, el cual alojará todo el Back-end de la aplicación.
 
 2. Crear el entorno virtual del proyecto ingresando por la terminal el siguiente comando:
 
