@@ -69,7 +69,10 @@ python app.py
 En *Compute* pinchar en la opción *Free* y luego en el botón *Deploy Web Service* y listo! La app está en proceso de ser desplegada.
 
 5. App en **Streamlit**.
-En el hub de Render ir al boton *+New* y seleccior *New Web Service*. Allí seleccionar el repositorio que aloja la app para Streamlit(`clase_05\streamlit`). Completar el apartado *Start Command* con:
+
+En el hub de Render ir al boton *+New* y seleccionar *New Web Service*. Definir el repositorio que aloja la app para Streamlit(`clase_05\streamlit`). 
+
+Finalmente, completar el apartado *Start Command* con:
 
 ```bash
 streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
