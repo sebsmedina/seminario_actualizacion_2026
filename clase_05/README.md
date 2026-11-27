@@ -1,7 +1,7 @@
 ## Clase N° 5 - Del link que se cae al deploy propio
 
 #### 🎯 Objetivos:
-Deploy de nuestra app en Render y Streamlit.
+Deploy de apps en Render con diferentes interfaces.
 
 #### 📂 Contenido de esta Carpeta
 ```text
@@ -43,13 +43,14 @@ Start Command: clase_05/streamlit/ streamlit app.py
 
 1.  Generar una cuenta en Render para poder deployar nuestra app. Ventajas: gratuito, soporta ASGI y se conecta desde GitHub.
 
-2. Eliminamos las siguientes líneas en el código de la app que hacían referencia al decorador de Spaces de Hugging Face (agregadas en la clase 02) ya que no deployaremos por esa vía:
+2. Eliminar las siguientes líneas en el código de la app que hacían referencia al decorador de Spaces de Hugging Face (agregadas en la clase 02) ya que no deployaremos por esa vía:
 
 ```bash
 import spaces
 @spaces.GPU
 ```
-Y agregamos las siguientes que configuran el puerto de forma correcta para Render (localhost solo es accesible desde la máquina misma, no puede atender solicitudes del exterior):
+3. Agregar las siguientes que configuran el puerto de forma correcta para Render (localhost solo es accesible desde la máquina misma, no puede atender solicitudes del exterior):
+
 ```bash
 import os
 demo.launch(
@@ -57,18 +58,20 @@ demo.launch(
     server_port=int(os.environ.get("PORT", 7860))
 )
 ```
-Actualizamos nuestro repositorio luego de los cambios con *add*, *commit* y *push*.
+Actualizar el repositorio luego de los cambios con *add*, *commit* y *push*.
 
-3. En nuestro hub de Render vamos al boton *+New* y seleccionamos *New Web Service*. Allí seleccionamos el repositorio que aloja nuestra app para Gradio. Solamente completamos el apartado *Start Command* y colocamos:
+4. En el hub de Render ir al boton *+New* y seleccior *New Web Service*. Allí seleccionar el repositorio que aloja la app para Gradio. Completar el apartado *Start Command* y colocar:
+
 ```bash
 python app.py
 ```
-En *Compute* pinchamos en la opción *Free* y luego en el botón *Deploy Web Service* y listo! Nuestra app está en proceso de ser desplegada.
 
-4. App en **Streamlit**.
+En *Compute* pinchar en la opción *Free* y luego en el botón *Deploy Web Service* y listo! La app está en proceso de ser desplegada.
+
+5. App en **Streamlit**.
 Creamos una cuenta en Streamlit mediante nuestro repositorio en GitHub.
 
-5. Una vez creada nuestra cuenta, sobre el apartado Streamlit Playground seleccionamos crear una nueva app desde un repositorio en GitHub. Al solicitarnos la dirección del repositorio, colocaremos la que contiene la aplicación con el código para la interfaz de Streamlit (`clase_05`\ `streamlit` \ `app.py`). Streamlit por si solo encontrará la ruta que contiene la aplicación. Solamente nos quedará apretar el botón *Deploy* para deplegar nuestra app.
+6. Una vez creada nuestra cuenta, sobre el apartado Streamlit Playground seleccionamos crear una nueva app desde un repositorio en GitHub. Al solicitarnos la dirección del repositorio, colocaremos la que contiene la aplicación con el código para la interfaz de Streamlit (`clase_05`\ `streamlit` \ `app.py`). Streamlit por si solo encontrará la ruta que contiene la aplicación. Solamente nos quedará apretar el botón *Deploy* para deplegar nuestra app.
 
 #### 🧠 Conclusiones - Diferencias entre ambas
 
